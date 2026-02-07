@@ -29,7 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/healthcheck', (req, res) => {
   res.status(200)
-  res.send('OK')
+  res.status(200).json({
+  status: 'success',
+  message: 'OK'
+  }) /**修改健康檢查回傳格式 */
 })
 app.use('/api/credit-package', creditPackageRouter)
 app.use('/api/coaches/skill', skillRouter)

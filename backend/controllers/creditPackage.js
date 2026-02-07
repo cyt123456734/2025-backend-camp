@@ -21,7 +21,8 @@ class CreditPackageController {
       })
       res.status(200).json({
         status: 'success',
-        data: creditPackage
+        data: creditPackage,
+        total: creditPackage.length /** 新增 API 回傳總筆數*/
       })
     } catch (error) {
       logger.error(error)
